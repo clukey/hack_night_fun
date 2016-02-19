@@ -24,8 +24,8 @@ int main(int argc, char **argv) {
 
     int sq_root = (int)sqrt(prime_candidate);
     int prime_flag = 1;
-
-    for (int i = 2; i <= sq_root; i++){
+    int i;
+    for (i = 2; i <= sq_root; i++){
       int int_quotient = prime_candidate/i;
       double dbl_quotient = (double)prime_candidate/(double)i;
 
