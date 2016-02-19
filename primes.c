@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
       int int_quotient = prime_candidate/i;
       double dbl_quotient = (double)prime_candidate/(double)i;
 
-      if ((dbl_quotient - int_quotient) < 0.000000001) {
+      if (dbl_quotient == int_quotient) {
         prime_flag = 0;
         break;
       }
