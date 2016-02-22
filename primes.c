@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <math.h>
 
-int main(int argc, char **argv) {
+int main() {
   int prime_count = 0;
   int prime_candidate = 0;
 
