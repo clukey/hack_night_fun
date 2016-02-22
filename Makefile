@@ -3,17 +3,21 @@ CC = gcc
 CFLAGS = -Wall -lm
 
 TARGET = primes
+NEW_TARGET = new_primes
 EXTENSION = out
 FULL_TARGET = $(TARGET).$(EXTENSION)
+FULL_NEW_TARGET = $(NEW_TARGET).$(EXTENSION)
 
-all: $(TARGET)
+all: $(TARGET) $(NEW_TARGET)
 
 $(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $(FULL_TARGET) $(TARGET).c
 
-debug: $(TARGET).c
-	$(CC) $(CFLAGS) -Werror -g -o $(FULL_TARGET) $(TARGET).c
+$(NEW_TARGET): $(NEW_TARGET).c
+	$(CC) $(CFLAGS) -o $(FULL_NEW_TARGET) $(NEW_TARGET).c
 
 clean:
 	-rm -f $(FULL_TARGET)
 	-rm -rf $(FULL_TARGET).dSYM
+	-rm -f $(FULL_NEW_TARGET)
+	-rm -rf $(FULL_NEW_TARGET).dSYM
