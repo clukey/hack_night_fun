@@ -1,6 +1,6 @@
 CC = gcc
 
-CFLAGS = -Wall -lm
+CFLAGS = -Wall -Werror
 
 TARGET = parens
 EXTENSION = out

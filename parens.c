@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SIZE 10000
-
 unsigned long long _printParenthesis(int pos, int n, int open, int close, unsigned long long previous_count);
 
 /* Wrapper over _printParenthesis()*/
@@ -16,7 +14,6 @@ unsigned long long printParenthesis(int n)
 
 unsigned long long _printParenthesis(int pos, int n, int open, int close, unsigned long long previous_count)
 {
-  static char str[MAX_SIZE];
   unsigned long long count = 0;
   if(close == n)
   {
@@ -26,11 +23,9 @@ unsigned long long _printParenthesis(int pos, int n, int open, int close, unsign
   else
   {
     if(open > close) {
-      str[pos] = '}';
       count += _printParenthesis(pos+1, n, open, close+1, count);
     }
     if(open < n) {
-      str[pos] = '{';
       count += _printParenthesis(pos+1, n, open+1, close, count);
     }
   }
