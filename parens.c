@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned long long _printParenthesis(int pos, int n, int open, int close, unsigned long long previous_count);
+unsigned long long _printParenthesis(int pos, int n, int open, int close);
 
 /* Wrapper over _printParenthesis()*/
 unsigned long long printParenthesis(int n)
@@ -12,7 +12,7 @@ unsigned long long printParenthesis(int n)
   return count;
 }
 
-unsigned long long _printParenthesis(int pos, int n, int open, int close, unsigned long long previous_count)
+unsigned long long _printParenthesis(int pos, int n, int open, int close)
 {
   unsigned long long count = 0;
   if(close == n)
@@ -23,10 +23,10 @@ unsigned long long _printParenthesis(int pos, int n, int open, int close, unsign
   else
   {
     if(open > close) {
-      count += _printParenthesis(pos+1, n, open, close+1, count);
+      count += _printParenthesis(pos+1, n, open, close+1);
     }
     if(open < n) {
-      count += _printParenthesis(pos+1, n, open+1, close, count);
+      count += _printParenthesis(pos+1, n, open+1, close);
     }
   }
   return count;
