@@ -1,15 +1,15 @@
-CC = gcc
+CC = g++
 
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall -Werror -std=c++11
 
-TARGET = parens
+TARGET = morse
 EXTENSION = out
 FULL_TARGET = $(TARGET).$(EXTENSION)
 
 all: $(TARGET) $(NEW_TARGET)
 
-$(TARGET): $(TARGET).c
-	$(CC) $(CFLAGS) -o $(FULL_TARGET) $(TARGET).c
+$(TARGET): $(TARGET).cpp
+	$(CC) $(CFLAGS) -o $(FULL_TARGET) $(TARGET).cpp
 
 
 
